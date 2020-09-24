@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    agent { docker { image 'locustio/locust' } }
     stages {
         stage('build') {
             steps {
-                sh 'Hello Nagaraju!!!'
+                sh 'locust --version'
             }
         }
     }
